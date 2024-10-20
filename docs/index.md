@@ -22,7 +22,7 @@ By connecting event sources (like a Redis stream) to sensors that listen for eve
 
 The project workflow involves:
 
-* Event Source: A Redis stream that triggers workflows when new Sentinel-2 image acquisition events are detected.
+* Event Source: A Redis stream that holds Sentinel-2 image acquisitions.
 * Sensor: Listens for events from the Redis stream and triggers a workflow to detect water bodies.
 * Argo Workflow: Executes a CWL-based workflow using Calrissian to process Sentinel-2 images.
 * Calrissian: An execution engine for running CWL workflows in Kubernetes, integrated with Argo Workflows.
