@@ -2,7 +2,6 @@
 
 ```puml
 @startuml
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
 
 frame "Producer Network" {
   component "Collector" as publisher
