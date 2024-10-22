@@ -18,6 +18,7 @@ frame "Platform Network" {
 
   esc -u-> es : Watch
   esc -d-> esd : Create
+  esd -l-> redis : Listen
 
   artifact "Sensor" as sensor
   component "Sensor\nController" as sensorc
@@ -33,8 +34,6 @@ frame "Platform Network" {
   esd -d-> evbus : Write\nEvents
   evbus -u-> sensord : Read\nEvents
 }
-
-esd -l-> redis : Listen
 
 @enduml
 ```
