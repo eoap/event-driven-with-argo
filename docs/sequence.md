@@ -4,7 +4,6 @@
 
 ```puml
 @startuml
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
 
 autonumber "<b>[00]"
 
@@ -44,7 +43,6 @@ deactivate sensord
 
 ```puml
 @startuml
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
 
 autonumber "<b>[00]"
 
