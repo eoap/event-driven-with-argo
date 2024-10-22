@@ -19,6 +19,8 @@ plugins:
   - search
   - mermaid2:
       version: 10.6.0
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
 
 markdown_extensions:
   - pymdownx.details
