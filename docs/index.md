@@ -26,3 +26,9 @@ The project workflow involves:
 * Sensor: Listens for events from the Redis stream and triggers a workflow to detect water bodies.
 * Argo Workflow: Executes a CWL-based workflow using Calrissian to process Sentinel-2 images.
 * Calrissian: An execution engine for running CWL workflows in Kubernetes, integrated with Argo Workflows.
+
+```puml
+@startuml
+Bob -> Alice : hello
+@enduml
+```

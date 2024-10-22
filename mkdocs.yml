@@ -19,6 +19,8 @@ plugins:
   - search
   - mermaid2:
       version: 10.6.0
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
 
 markdown_extensions:
   - pymdownx.details
@@ -53,6 +55,10 @@ extra_javascript:
 
 nav:
   - Introduction: 'index.md'
+  - Architecture:
+    - Components: 'components.md'
+    - Seuquence Diagrams: 'sequence.md'
+    - Topics: 'topics.md'
   
 
 copyright: <a href="https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg">License CC BY-SA 4.0</a>, by <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons</a>
