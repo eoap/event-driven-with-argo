@@ -48,13 +48,18 @@ deactivate sensord
 
 autonumber "<b>[00]"
 
+box "Producer Network"
+participant "Collector" as publisher
+end box
+
+box "Platform Network" #White
 control "Event Source\nDeployment" as esd
 control "Sensor\nDeployment" as sensord
 
-participant "Collector" as publisher
 database "Redis" as redis
 queue "Event Bus" as evbus
 participant "<$node>\nWorkflow" as container
+end box
 
 activate esd
 activate sensord
