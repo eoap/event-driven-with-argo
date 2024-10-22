@@ -12,14 +12,6 @@ frame "Producer Network" {
 }
 
 frame "Platform Network" {
-  artifact "Event Source" as es
-  component "Event Source\nController" as esc
-  control "Event Source\nDeployment" as esd
-
-  esc -u-> es : Watch
-  esc -d-> esd : Create
-  esd -l-> redis : Listen
-
   artifact "Sensor" as sensor
   component "Sensor\nController" as sensorc
   control "Sensor\nDeployment" as sensord
@@ -28,6 +20,14 @@ frame "Platform Network" {
   sensorc -u-> sensor : Watch
   sensorc -d-> sensord : Create
   sensord -r-> container : Trigger
+
+  artifact "Event Source" as es
+  component "Event Source\nController" as esc
+  control "Event Source\nDeployment" as esd
+
+  esc -u-> es : Watch
+  esc -d-> esd : Create
+  esd -l-> redis : Listen
 
   queue "Event Bus" as evbus
 
