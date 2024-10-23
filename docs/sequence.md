@@ -70,12 +70,18 @@ par actions occur asynchronously
   publisher -> redis : Add new entries
 else
   esd ->o redis : Listen
-  esd -> evbus : Write Events
+  esd -> evbus : Write ""acme-sentinel2-stream-source-collected"" Events
 else
   sensord ->o evbus : Read Events
   sensord -> container ++ : Trigger
   container -> container : Compute
-  container --> sensord : Return exit code
+
+  alt#LightGreen water bodies detection Success
+    container --> redis : Write ""acme-water-bodies-detection-success"" Events
+else water bodies detection Failure
+    container --> redis : Write ""acme-water-bodies-detection-failure"" Events
+end
+
   destroy container
 end
 
