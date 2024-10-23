@@ -67,7 +67,7 @@ activate redis
 activate evbus
 
 par actions occur asynchronously
-  publisher -> redis : Add new entries
+  publisher -> redis : Add new ""sentinel-2 acquisition"" Events
 else
   esd ->o redis : Listen
   esd -> evbus : Write ""acme-sentinel2-stream-source-collected"" Events
