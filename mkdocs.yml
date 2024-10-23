@@ -21,6 +21,9 @@ plugins:
       version: 10.6.0
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
+      theme:
+        light: catppuccin/latte
+        dark: catppuccin/mocha
 
 markdown_extensions:
   - pymdownx.details
