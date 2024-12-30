@@ -1,0 +1,626 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../components/">
+      
+      
+        <link rel="next" href="../topics/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Sequence Diagrams - Event driven Earth Observation Application Package with Argo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/css/app.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sequence-diagrams" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Event driven Earth Observation Application Package with Argo" class="md-header__button md-logo" aria-label="Event driven Earth Observation Application Package with Argo" data-md-component="logo">
+      
+  <img src="../imgs/icon-eoap.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Event driven Earth Observation Application Package with Argo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sequence Diagrams
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Event driven Earth Observation Application Package with Argo" class="md-nav__button md-logo" aria-label="Event driven Earth Observation Application Package with Argo" data-md-component="logo">
+      
+  <img src="../imgs/icon-eoap.png" alt="logo">
+
+    </a>
+    Event driven Earth Observation Application Package with Argo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo-workflows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Argo Workflows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argo-events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Argo Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration and Execution Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insights/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical Insights and Learnings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sequence Diagrams
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sequence Diagrams
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingestion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingestion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sequence-diagrams">Sequence Diagrams</h1>
+<h2 id="deployment">Deployment</h2>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="304px" preserveAspectRatio="xMidYMid meet" style="width:672px;height:304px;background:#FFFFFF;" version="1.1" viewBox="0 0 672 304" width="672px" zoomAndPan="magnify" class="diagram"><defs/><g><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="68.4741" y="79.5938"/><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="185.4224" y="79.5938"/><rect fill="#A3D4D5" height="75.2656" style="stroke:#658594;stroke-width:1;" width="10" x="298.3706" y="153.9922"/><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="388.8389" y="79.5938"/><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="498.1167" y="79.5938"/><rect fill="#A3D4D5" height="15" style="stroke:#658594;stroke-width:1;" width="10" x="604.5718" y="214.2578"/><rect fill="none" height="135.6641" style="stroke:#957FB8;stroke-width:1.5;" width="655.3887" x="10" y="86.5938"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="73" x2="73" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="189.9482" x2="189.9482" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="302.8965" x2="302.8965" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="392.8447" x2="392.8447" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="502.5303" x2="502.5303" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="608.7549" x2="608.7549" y1="69.5938" y2="239.2578"/><rect fill="#F5F3E0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="20" y="38.2969"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="27" y="58.292">Event Source</text><rect fill="#F5F3E0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="20" y="238.2578"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="27" y="258.2529">Event Source</text><rect fill="#F5F3E0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="136.9482" y="22"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="143.9482" y="41.9951">Event Source</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="155.8359" y="58.292">Controller</text><rect fill="#F5F3E0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="136.9482" y="238.2578"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="143.9482" y="258.2529">Event Source</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="155.8359" y="274.5498">Controller</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="253.8965" y="49.9951">Event Source</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="257.5537" y="66.292">Deployment</text><ellipse cx="303.3706" cy="21" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="299.3706,9,305.3706,4,303.3706,9,305.3706,14,299.3706,9" style="stroke:#54546D;stroke-width:1;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="253.8965" y="251.2529">Event Source</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="257.5537" y="267.5498">Deployment</text><ellipse cx="303.3706" cy="286.8516" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="299.3706,274.8516,305.3706,269.8516,303.3706,274.8516,305.3706,279.8516,299.3706,274.8516" style="stroke:#54546D;stroke-width:1;"/><rect fill="#F5F3E0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="61.9883" x="362.8447" y="38.2969"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="369.8447" y="58.292">Sensor</text><rect fill="#F5F3E0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="61.9883" x="362.8447" y="238.2578"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="369.8447" y="258.2529">Sensor</text><rect fill="#F5F3E0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="83.1729" x="461.5303" y="22"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="479.1226" y="41.9951">Sensor</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="468.5303" y="58.292">Controller</text><rect fill="#F5F3E0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="83.1729" x="461.5303" y="238.2578"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="479.1226" y="258.2529">Sensor</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="468.5303" y="274.5498">Controller</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="582.5776" y="49.9951">Sensor</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="563.7549" y="66.292">Deployment</text><ellipse cx="609.5718" cy="21" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="605.5718,9,611.5718,4,609.5718,9,611.5718,14,605.5718,9" style="stroke:#54546D;stroke-width:1;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="582.5776" y="251.2529">Sensor</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="563.7549" y="267.5498">Deployment</text><ellipse cx="609.5718" cy="286.8516" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="605.5718,274.8516,611.5718,269.8516,609.5718,274.8516,611.5718,279.8516,605.5718,274.8516" style="stroke:#54546D;stroke-width:1;"/><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="68.4741" y="79.5938"/><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="185.4224" y="79.5938"/><rect fill="#A3D4D5" height="75.2656" style="stroke:#658594;stroke-width:1;" width="10" x="298.3706" y="153.9922"/><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="388.8389" y="79.5938"/><rect fill="#A3D4D5" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="498.1167" y="79.5938"/><rect fill="#A3D4D5" height="15" style="stroke:#658594;stroke-width:1;" width="10" x="604.5718" y="214.2578"/><path d="M10,86.5938 L79.4893,86.5938 L79.4893,93.7266 L69.4893,103.7266 L10,103.7266 L10,86.5938 " fill="#957FB8" style="stroke:#957FB8;stroke-width:2;"/><rect fill="none" height="135.6641" style="stroke:#957FB8;stroke-width:1.5;" width="655.3887" x="10" y="86.5938"/><text fill="#F5F3E0" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="24.4893" x="25" y="99.6606">par</text><text fill="#16161D" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="193.4883" x="94.4893" y="98.8042">[actions occur asynchronously]</text><polygon fill="#54546D" points="89.4741,120.8594,79.4741,124.8594,89.4741,128.8594,85.4741,124.8594" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="83.4741" x2="184.4224" y1="124.8594" y2="124.8594"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="95.4741" y="119.7935">[01]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="41.3042" x="129.4478" y="119.7935">Watch</text><polygon fill="#54546D" points="286.3706,149.9922,296.3706,153.9922,286.3706,157.9922,290.3706,153.9922" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="195.4224" x2="292.3706" y1="153.9922" y2="153.9922"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="202.4224" y="148.9263">[02]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43.4814" x="236.396" y="148.9263">Create</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="10" x2="665.3887" y1="162.9922" y2="162.9922"/><polygon fill="#54546D" points="409.8389,181.125,399.8389,185.125,409.8389,189.125,405.8389,185.125" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="403.8389" x2="497.1167" y1="185.125" y2="185.125"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="415.8389" y="180.0591">[03]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="41.3042" x="449.8125" y="180.0591">Watch</text><polygon fill="#54546D" points="592.5718,210.2578,602.5718,214.2578,592.5718,218.2578,596.5718,214.2578" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="508.1167" x2="598.5718" y1="214.2578" y2="214.2578"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="515.1167" y="209.1919">[04]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43.4814" x="549.0903" y="209.1919">Create</text></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="304px" preserveAspectRatio="xMidYMid meet" style="width:672px;height:304px;background:#1F1F28;" version="1.1" viewBox="0 0 672 304" width="672px" zoomAndPan="magnify" class="diagram"><defs/><g><rect fill="#1F1F28" height="304" style="stroke:none;stroke-width:1;" width="672" x="0" y="0"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="68.4741" y="79.5938"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="185.4224" y="79.5938"/><rect fill="#6A9589" height="75.2656" style="stroke:#658594;stroke-width:1;" width="10" x="298.3706" y="153.9922"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="388.8389" y="79.5938"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="498.1167" y="79.5938"/><rect fill="#6A9589" height="15" style="stroke:#658594;stroke-width:1;" width="10" x="604.5718" y="214.2578"/><rect fill="none" height="135.6641" style="stroke:#957FB8;stroke-width:1.5;" width="655.3887" x="10" y="86.5938"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="73" x2="73" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="189.9482" x2="189.9482" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="302.8965" x2="302.8965" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="392.8447" x2="392.8447" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="502.5303" x2="502.5303" y1="69.5938" y2="239.2578"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="608.7549" x2="608.7549" y1="69.5938" y2="239.2578"/><rect fill="#16161D" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="20" y="38.2969"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="27" y="58.292">Event Source</text><rect fill="#16161D" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="20" y="238.2578"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="27" y="258.2529">Event Source</text><rect fill="#16161D" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="136.9482" y="22"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="143.9482" y="41.9951">Event Source</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="155.8359" y="58.292">Controller</text><rect fill="#16161D" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="106.9482" x="136.9482" y="238.2578"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="143.9482" y="258.2529">Event Source</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="155.8359" y="274.5498">Controller</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="253.8965" y="49.9951">Event Source</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="257.5537" y="66.292">Deployment</text><ellipse cx="303.3706" cy="21" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="299.3706,9,305.3706,4,303.3706,9,305.3706,14,299.3706,9" style="stroke:#C6C6D6;stroke-width:1;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="253.8965" y="251.2529">Event Source</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="257.5537" y="267.5498">Deployment</text><ellipse cx="303.3706" cy="286.8516" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="299.3706,274.8516,305.3706,269.8516,303.3706,274.8516,305.3706,279.8516,299.3706,274.8516" style="stroke:#C6C6D6;stroke-width:1;"/><rect fill="#16161D" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="61.9883" x="362.8447" y="38.2969"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="369.8447" y="58.292">Sensor</text><rect fill="#16161D" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="61.9883" x="362.8447" y="238.2578"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="369.8447" y="258.2529">Sensor</text><rect fill="#16161D" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="83.1729" x="461.5303" y="22"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="479.1226" y="41.9951">Sensor</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="468.5303" y="58.292">Controller</text><rect fill="#16161D" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="83.1729" x="461.5303" y="238.2578"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="479.1226" y="258.2529">Sensor</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69.1729" x="468.5303" y="274.5498">Controller</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="582.5776" y="49.9951">Sensor</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="563.7549" y="66.292">Deployment</text><ellipse cx="609.5718" cy="21" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="605.5718,9,611.5718,4,609.5718,9,611.5718,14,605.5718,9" style="stroke:#C6C6D6;stroke-width:1;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="582.5776" y="251.2529">Sensor</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="563.7549" y="267.5498">Deployment</text><ellipse cx="609.5718" cy="286.8516" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="605.5718,274.8516,611.5718,269.8516,609.5718,274.8516,611.5718,279.8516,605.5718,274.8516" style="stroke:#C6C6D6;stroke-width:1;"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="68.4741" y="79.5938"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="185.4224" y="79.5938"/><rect fill="#6A9589" height="75.2656" style="stroke:#658594;stroke-width:1;" width="10" x="298.3706" y="153.9922"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="388.8389" y="79.5938"/><rect fill="#6A9589" height="149.6641" style="stroke:#658594;stroke-width:1;" width="10" x="498.1167" y="79.5938"/><rect fill="#6A9589" height="15" style="stroke:#658594;stroke-width:1;" width="10" x="604.5718" y="214.2578"/><path d="M10,86.5938 L79.4893,86.5938 L79.4893,93.7266 L69.4893,103.7266 L10,103.7266 L10,86.5938 " fill="#957FB8" style="stroke:#957FB8;stroke-width:2;"/><rect fill="none" height="135.6641" style="stroke:#957FB8;stroke-width:1.5;" width="655.3887" x="10" y="86.5938"/><text fill="#16161D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="24.4893" x="25" y="99.6606">par</text><text fill="#DCD7BA" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="193.4883" x="94.4893" y="98.8042">[actions occur asynchronously]</text><polygon fill="#C6C6D6" points="89.4741,120.8594,79.4741,124.8594,89.4741,128.8594,85.4741,124.8594" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="83.4741" x2="184.4224" y1="124.8594" y2="124.8594"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="95.4741" y="119.7935">[01]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="41.3042" x="129.4478" y="119.7935">Watch</text><polygon fill="#C6C6D6" points="286.3706,149.9922,296.3706,153.9922,286.3706,157.9922,290.3706,153.9922" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="195.4224" x2="292.3706" y1="153.9922" y2="153.9922"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="202.4224" y="148.9263">[02]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43.4814" x="236.396" y="148.9263">Create</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="10" x2="665.3887" y1="162.9922" y2="162.9922"/><polygon fill="#C6C6D6" points="409.8389,181.125,399.8389,185.125,409.8389,189.125,405.8389,185.125" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="403.8389" x2="497.1167" y1="185.125" y2="185.125"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="415.8389" y="180.0591">[03]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="41.3042" x="449.8125" y="180.0591">Watch</text><polygon fill="#C6C6D6" points="592.5718,210.2578,602.5718,214.2578,592.5718,218.2578,596.5718,214.2578" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="508.1167" x2="598.5718" y1="214.2578" y2="214.2578"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="515.1167" y="209.1919">[04]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43.4814" x="549.0903" y="209.1919">Create</text></g></svg></div></div>
+
+<h2 id="ingestion">Ingestion</h2>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="533px" preserveAspectRatio="xMidYMid meet" style="width:1173px;height:533px;background:#FFFFFF;" version="1.1" viewBox="0 0 1173 533" width="1173px" zoomAndPan="magnify" class="diagram"><defs/><g><rect fill="#A3D4D5" height="516.4531" rx="5" ry="5" style="stroke:#A3D4D5;stroke-width:0.3;" width="395.6714" x="16" y="6"/><text fill="#16161D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="132.7993" x="147.436" y="18.0669">Producer Network</text><rect fill="#FFFFFF" height="516.4531" rx="5" ry="5" style="stroke:#A3D4D5;stroke-width:0.3;" width="644.3154" x="438.9272" y="6"/><text fill="#16161D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="129.9492" x="696.1104" y="18.0669">Platform Network</text><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="53.1206" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="380.4658" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="487.4014" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="592.6924" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="939.9731" y="99.7266"/><rect fill="#A3D4D5" height="154.3359" style="stroke:#658594;stroke-width:1;" width="10" x="1034.6899" y="265.5234"/><rect fill="none" height="331.1328" style="stroke:#957FB8;stroke-width:1.5;" width="1156.9443" x="10" y="106.7266"/><rect fill="none" height="90.2031" style="stroke:#957FB8;stroke-width:1.5;" width="735.9824" x="353.2603" y="322.6563"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="58" x2="58" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="385.2603" x2="385.2603" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="491.9272" x2="491.9272" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="596.8755" x2="596.8755" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="944.8091" x2="944.8091" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="1039.1372" x2="1039.1372" y1="89.7266" y2="454.8594"/><rect fill="#F5F3E0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="76.2412" x="20" y="58.4297"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62.2412" x="27" y="78.4248">Collector</text><rect fill="#F5F3E0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="76.2412" x="20" y="453.8594"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62.2412" x="27" y="473.8545">Collector</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.4111" x="363.2603" y="86.4248">Redis</text><path d="M367.4658,37.4297 C367.4658,27.4297 385.4658,27.4297 385.4658,27.4297 C385.4658,27.4297 403.4658,27.4297 403.4658,37.4297 L403.4658,63.4297 C403.4658,73.4297 385.4658,73.4297 385.4658,73.4297 C385.4658,73.4297 367.4658,73.4297 367.4658,63.4297 L367.4658,37.4297 " fill="#F5F3E0" style="stroke:#54546D;stroke-width:1.5;"/><path d="M367.4658,37.4297 C367.4658,47.4297 385.4658,47.4297 385.4658,47.4297 C385.4658,47.4297 403.4658,47.4297 403.4658,37.4297 " fill="none" style="stroke:#54546D;stroke-width:1.5;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.4111" x="363.2603" y="466.8545">Redis</text><path d="M367.4658,480.1563 C367.4658,470.1563 385.4658,470.1563 385.4658,470.1563 C385.4658,470.1563 403.4658,470.1563 403.4658,480.1563 L403.4658,506.1563 C403.4658,516.1563 385.4658,516.1563 385.4658,516.1563 C385.4658,516.1563 367.4658,516.1563 367.4658,506.1563 L367.4658,480.1563 " fill="#F5F3E0" style="stroke:#54546D;stroke-width:1.5;"/><path d="M367.4658,480.1563 C367.4658,490.1563 385.4658,490.1563 385.4658,490.1563 C385.4658,490.1563 403.4658,490.1563 403.4658,480.1563 " fill="none" style="stroke:#54546D;stroke-width:1.5;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="442.9272" y="70.1279">Event Source</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="446.5845" y="86.4248">Deployment</text><ellipse cx="492.4014" cy="41.1328" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="488.4014,29.1328,494.4014,24.1328,492.4014,29.1328,494.4014,34.1328,488.4014,29.1328" style="stroke:#54546D;stroke-width:1;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="442.9272" y="466.8545">Event Source</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="446.5845" y="483.1514">Deployment</text><ellipse cx="492.4014" cy="502.4531" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="488.4014,490.4531,494.4014,485.4531,492.4014,490.4531,494.4014,495.4531,488.4014,490.4531" style="stroke:#54546D;stroke-width:1;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="570.6982" y="70.1279">Sensor</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="551.8755" y="86.4248">Deployment</text><ellipse cx="597.6924" cy="41.1328" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="593.6924,29.1328,599.6924,24.1328,597.6924,29.1328,599.6924,34.1328,593.6924,29.1328" style="stroke:#54546D;stroke-width:1;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="570.6982" y="466.8545">Sensor</text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="551.8755" y="483.1514">Deployment</text><ellipse cx="597.6924" cy="502.4531" fill="#F5F3E0" rx="12" ry="12" style="stroke:#54546D;stroke-width:0.3;"/><polygon fill="#54546D" points="593.6924,490.4531,599.6924,485.4531,597.6924,490.4531,599.6924,495.4531,593.6924,490.4531" style="stroke:#54546D;stroke-width:1;"/><path d="M904.8091,63.4297 L985.1372,63.4297 C990.1372,63.4297 990.1372,76.5781 990.1372,76.5781 C990.1372,76.5781 990.1372,89.7266 985.1372,89.7266 L904.8091,89.7266 C899.8091,89.7266 899.8091,76.5781 899.8091,76.5781 C899.8091,76.5781 899.8091,63.4297 904.8091,63.4297 " fill="#F5F3E0" style="stroke:#54546D;stroke-width:0.3;"/><path d="M985.1372,63.4297 C980.1372,63.4297 980.1372,76.5781 980.1372,76.5781 C980.1372,89.7266 985.1372,89.7266 985.1372,89.7266 " fill="none" style="stroke:#54546D;stroke-width:0.3;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.3281" x="904.8091" y="81.4248">Event Bus</text><path d="M904.8091,453.8594 L985.1372,453.8594 C990.1372,453.8594 990.1372,467.0078 990.1372,467.0078 C990.1372,467.0078 990.1372,480.1563 985.1372,480.1563 L904.8091,480.1563 C899.8091,480.1563 899.8091,467.0078 899.8091,467.0078 C899.8091,467.0078 899.8091,453.8594 904.8091,453.8594 " fill="#F5F3E0" style="stroke:#54546D;stroke-width:0.3;"/><path d="M985.1372,453.8594 C980.1372,453.8594 980.1372,467.0078 980.1372,467.0078 C980.1372,480.1563 985.1372,480.1563 985.1372,480.1563 " fill="none" style="stroke:#54546D;stroke-width:0.3;"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.3281" x="904.8091" y="471.8545">Event Bus</text><rect fill="#F5F3E0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="79.1055" x="1000.1372" y="42.1328"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="1037.4648" y="62.1279"> </text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65.1055" x="1007.1372" y="78.4248">Workflow</text><rect fill="#F5F3E0" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="79.1055" x="1000.1372" y="453.8594"/><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="1037.4648" y="473.8545"> </text><text fill="#16161D" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65.1055" x="1007.1372" y="490.1514">Workflow</text><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="53.1206" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="380.4658" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="487.4014" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="592.6924" y="99.7266"/><rect fill="#A3D4D5" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="939.9731" y="99.7266"/><rect fill="#A3D4D5" height="154.3359" style="stroke:#658594;stroke-width:1;" width="10" x="1034.6899" y="265.5234"/><path d="M10,106.7266 L79.4893,106.7266 L79.4893,113.8594 L69.4893,123.8594 L10,123.8594 L10,106.7266 " fill="#957FB8" style="stroke:#957FB8;stroke-width:2;"/><rect fill="none" height="331.1328" style="stroke:#957FB8;stroke-width:1.5;" width="1156.9443" x="10" y="106.7266"/><text fill="#F5F3E0" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="24.4893" x="25" y="119.7935">par</text><text fill="#16161D" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="193.4883" x="94.4893" y="118.937">[actions occur asynchronously]</text><polygon fill="#54546D" points="368.4658,140.9922,378.4658,144.9922,368.4658,148.9922,372.4658,144.9922" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="63.1206" x2="374.4658" y1="144.9922" y2="144.9922"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="70.1206" y="139.9263">[01]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="104.0942" y="139.9263">Write</text><text fill="#54546D" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="172.1865" x="143.1323" y="139.9263">sentinel-2 acquisition</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="319.4512" y="139.9263">Events</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="10" x2="1166.9443" y1="153.9922" y2="153.9922"/><ellipse cx="389.9658" cy="175.375" fill="#54546D" rx="4" ry="4" style="stroke:#54546D;stroke-width:1.5;"/><polygon fill="#54546D" points="406.9658,172.125,396.9658,176.125,406.9658,180.125,402.9658,176.125" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="400.9658" x2="486.4014" y1="176.125" y2="176.125"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="407.4658" y="171.0591">[02]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38.9619" x="441.4395" y="171.0591">Listen</text><polygon fill="#54546D" points="927.9731,201.2578,937.9731,205.2578,927.9731,209.2578,931.9731,205.2578" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="497.4014" x2="933.9731" y1="205.2578" y2="205.2578"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="504.4014" y="200.1919">[03]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="538.375" y="200.1919">Write</text><text fill="#54546D" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="297.4131" x="577.4131" y="200.1919">acme-sentinel2-stream-source-collected</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="878.9585" y="200.1919">Events</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="10" x2="1166.9443" y1="214.2578" y2="214.2578"/><ellipse cx="939.4731" cy="235.6406" fill="#54546D" rx="4" ry="4" style="stroke:#54546D;stroke-width:1.5;"/><polygon fill="#54546D" points="922.4731,232.3906,932.4731,236.3906,922.4731,240.3906,926.4731,236.3906" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="602.6924" x2="928.4731" y1="236.3906" y2="236.3906"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="609.6924" y="231.3247">[04]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81.396" x="643.666" y="231.3247">Read Events</text><polygon fill="#54546D" points="1022.6899,261.5234,1032.6899,265.5234,1022.6899,269.5234,1026.6899,265.5234" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;" x1="602.6924" x2="1028.6899" y1="265.5234" y2="265.5234"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="609.6924" y="260.4575">[05]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46.7441" x="643.666" y="260.4575">Trigger</text><line style="stroke:#54546D;stroke-width:1;" x1="1044.6899" x2="1086.6899" y1="294.6563" y2="294.6563"/><line style="stroke:#54546D;stroke-width:1;" x1="1086.6899" x2="1086.6899" y1="294.6563" y2="307.6563"/><line style="stroke:#54546D;stroke-width:1;" x1="1045.6899" x2="1086.6899" y1="307.6563" y2="307.6563"/><polygon fill="#54546D" points="1055.6899,303.6563,1045.6899,307.6563,1055.6899,311.6563,1051.6899,307.6563" style="stroke:#54546D;stroke-width:1;"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="1051.6899" y="289.5903">[06]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59.2808" x="1085.6636" y="289.5903">Compute</text><path d="M353.2603,322.6563 L417.7031,322.6563 L417.7031,329.7891 L407.7031,339.7891 L353.2603,339.7891 L353.2603,322.6563 " fill="#90EE90" style="stroke:#957FB8;stroke-width:2;"/><rect fill="none" height="90.2031" style="stroke:#957FB8;stroke-width:1.5;" width="735.9824" x="353.2603" y="322.6563"/><text fill="#F5F3E0" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19.4429" x="368.2603" y="335.7231">alt</text><text fill="#16161D" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="206.6958" x="432.7031" y="334.8667">[water bodies detection Success]</text><polygon fill="#54546D" points="401.4658,356.9219,391.4658,360.9219,401.4658,364.9219,397.4658,360.9219" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="395.4658" x2="1033.6899" y1="360.9219" y2="360.9219"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="407.4658" y="355.856">[07]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="441.4395" y="355.856">Write</text><text fill="#54546D" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="273.9331" x="480.4775" y="355.856">acme-water-bodies-detection-success</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="758.543" y="355.856">Events</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="353.2603" x2="1089.2427" y1="369.9219" y2="369.9219"/><text fill="#16161D" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="200.5405" x="358.2603" y="380.1323">[water bodies detection Failure]</text><polygon fill="#54546D" points="401.4658,400.8594,391.4658,404.8594,401.4658,408.8594,397.4658,404.8594" style="stroke:#54546D;stroke-width:1;"/><line style="stroke:#54546D;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="395.4658" x2="1033.6899" y1="404.8594" y2="404.8594"/><text fill="#54546D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="407.4658" y="399.7935">[08]</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="441.4395" y="399.7935">Write</text><text fill="#54546D" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="273.9331" x="480.4775" y="399.7935">acme-water-bodies-detection-failure</text><text fill="#54546D" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="758.543" y="399.7935">Events</text><line style="stroke:#A80036;stroke-width:2;" x1="1030.6899" x2="1048.6899" y1="419.8594" y2="437.8594"/><line style="stroke:#A80036;stroke-width:2;" x1="1030.6899" x2="1048.6899" y1="437.8594" y2="419.8594"/></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="533px" preserveAspectRatio="xMidYMid meet" style="width:1173px;height:533px;background:#1F1F28;" version="1.1" viewBox="0 0 1173 533" width="1173px" zoomAndPan="magnify" class="diagram"><defs/><g><rect fill="#1F1F28" height="533" style="stroke:none;stroke-width:1;" width="1173" x="0" y="0"/><rect fill="#252535" height="516.4531" rx="5" ry="5" style="stroke:#54546D;stroke-width:0.3;" width="395.6714" x="16" y="6"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="132.7993" x="147.436" y="18.0669">Producer Network</text><rect fill="#FFFFFF" height="516.4531" rx="5" ry="5" style="stroke:#54546D;stroke-width:0.3;" width="644.3154" x="438.9272" y="6"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="129.9492" x="696.1104" y="18.0669">Platform Network</text><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="53.1206" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="380.4658" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="487.4014" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="592.6924" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="939.9731" y="99.7266"/><rect fill="#6A9589" height="154.3359" style="stroke:#658594;stroke-width:1;" width="10" x="1034.6899" y="265.5234"/><rect fill="none" height="331.1328" style="stroke:#957FB8;stroke-width:1.5;" width="1156.9443" x="10" y="106.7266"/><rect fill="none" height="90.2031" style="stroke:#957FB8;stroke-width:1.5;" width="735.9824" x="353.2603" y="322.6563"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="58" x2="58" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="385.2603" x2="385.2603" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="491.9272" x2="491.9272" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="596.8755" x2="596.8755" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="944.8091" x2="944.8091" y1="89.7266" y2="454.8594"/><line style="stroke:#658594;stroke-width:0.3;stroke-dasharray:5.0,5.0;" x1="1039.1372" x2="1039.1372" y1="89.7266" y2="454.8594"/><rect fill="#16161D" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="76.2412" x="20" y="58.4297"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62.2412" x="27" y="78.4248">Collector</text><rect fill="#16161D" height="30.2969" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="76.2412" x="20" y="453.8594"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62.2412" x="27" y="473.8545">Collector</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.4111" x="363.2603" y="86.4248">Redis</text><path d="M367.4658,37.4297 C367.4658,27.4297 385.4658,27.4297 385.4658,27.4297 C385.4658,27.4297 403.4658,27.4297 403.4658,37.4297 L403.4658,63.4297 C403.4658,73.4297 385.4658,73.4297 385.4658,73.4297 C385.4658,73.4297 367.4658,73.4297 367.4658,63.4297 L367.4658,37.4297 " fill="#16161D" style="stroke:#54546D;stroke-width:1.5;"/><path d="M367.4658,37.4297 C367.4658,47.4297 385.4658,47.4297 385.4658,47.4297 C385.4658,47.4297 403.4658,47.4297 403.4658,37.4297 " fill="none" style="stroke:#54546D;stroke-width:1.5;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38.4111" x="363.2603" y="466.8545">Redis</text><path d="M367.4658,480.1563 C367.4658,470.1563 385.4658,470.1563 385.4658,470.1563 C385.4658,470.1563 403.4658,470.1563 403.4658,480.1563 L403.4658,506.1563 C403.4658,516.1563 385.4658,516.1563 385.4658,516.1563 C385.4658,516.1563 367.4658,516.1563 367.4658,506.1563 L367.4658,480.1563 " fill="#16161D" style="stroke:#54546D;stroke-width:1.5;"/><path d="M367.4658,480.1563 C367.4658,490.1563 385.4658,490.1563 385.4658,490.1563 C385.4658,490.1563 403.4658,490.1563 403.4658,480.1563 " fill="none" style="stroke:#54546D;stroke-width:1.5;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="442.9272" y="70.1279">Event Source</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="446.5845" y="86.4248">Deployment</text><ellipse cx="492.4014" cy="41.1328" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="488.4014,29.1328,494.4014,24.1328,492.4014,29.1328,494.4014,34.1328,488.4014,29.1328" style="stroke:#C6C6D6;stroke-width:1;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92.9482" x="442.9272" y="466.8545">Event Source</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="446.5845" y="483.1514">Deployment</text><ellipse cx="492.4014" cy="502.4531" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="488.4014,490.4531,494.4014,485.4531,492.4014,490.4531,494.4014,495.4531,488.4014,490.4531" style="stroke:#C6C6D6;stroke-width:1;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="570.6982" y="70.1279">Sensor</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="551.8755" y="86.4248">Deployment</text><ellipse cx="597.6924" cy="41.1328" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="593.6924,29.1328,599.6924,24.1328,597.6924,29.1328,599.6924,34.1328,593.6924,29.1328" style="stroke:#C6C6D6;stroke-width:1;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47.9883" x="570.6982" y="466.8545">Sensor</text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85.6338" x="551.8755" y="483.1514">Deployment</text><ellipse cx="597.6924" cy="502.4531" fill="#16161D" rx="12" ry="12" style="stroke:#C6C6D6;stroke-width:0.3;"/><polygon fill="#C6C6D6" points="593.6924,490.4531,599.6924,485.4531,597.6924,490.4531,599.6924,495.4531,593.6924,490.4531" style="stroke:#C6C6D6;stroke-width:1;"/><path d="M904.8091,63.4297 L985.1372,63.4297 C990.1372,63.4297 990.1372,76.5781 990.1372,76.5781 C990.1372,76.5781 990.1372,89.7266 985.1372,89.7266 L904.8091,89.7266 C899.8091,89.7266 899.8091,76.5781 899.8091,76.5781 C899.8091,76.5781 899.8091,63.4297 904.8091,63.4297 " fill="#16161D" style="stroke:#54546D;stroke-width:0.3;"/><path d="M985.1372,63.4297 C980.1372,63.4297 980.1372,76.5781 980.1372,76.5781 C980.1372,89.7266 985.1372,89.7266 985.1372,89.7266 " fill="none" style="stroke:#54546D;stroke-width:0.3;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.3281" x="904.8091" y="81.4248">Event Bus</text><path d="M904.8091,453.8594 L985.1372,453.8594 C990.1372,453.8594 990.1372,467.0078 990.1372,467.0078 C990.1372,467.0078 990.1372,480.1563 985.1372,480.1563 L904.8091,480.1563 C899.8091,480.1563 899.8091,467.0078 899.8091,467.0078 C899.8091,467.0078 899.8091,453.8594 904.8091,453.8594 " fill="#16161D" style="stroke:#54546D;stroke-width:0.3;"/><path d="M985.1372,453.8594 C980.1372,453.8594 980.1372,467.0078 980.1372,467.0078 C980.1372,480.1563 985.1372,480.1563 985.1372,480.1563 " fill="none" style="stroke:#54546D;stroke-width:0.3;"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.3281" x="904.8091" y="471.8545">Event Bus</text><rect fill="#16161D" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="79.1055" x="1000.1372" y="42.1328"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="1037.4648" y="62.1279"> </text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65.1055" x="1007.1372" y="78.4248">Workflow</text><rect fill="#16161D" height="46.5938" rx="2.5" ry="2.5" style="stroke:#54546D;stroke-width:0.3;" width="79.1055" x="1000.1372" y="453.8594"/><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4.4502" x="1037.4648" y="473.8545"> </text><text fill="#DCD7BA" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65.1055" x="1007.1372" y="490.1514">Workflow</text><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="53.1206" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="380.4658" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="487.4014" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="592.6924" y="99.7266"/><rect fill="#6A9589" height="345.1328" style="stroke:#658594;stroke-width:1;" width="10" x="939.9731" y="99.7266"/><rect fill="#6A9589" height="154.3359" style="stroke:#658594;stroke-width:1;" width="10" x="1034.6899" y="265.5234"/><path d="M10,106.7266 L79.4893,106.7266 L79.4893,113.8594 L69.4893,123.8594 L10,123.8594 L10,106.7266 " fill="#957FB8" style="stroke:#957FB8;stroke-width:2;"/><rect fill="none" height="331.1328" style="stroke:#957FB8;stroke-width:1.5;" width="1156.9443" x="10" y="106.7266"/><text fill="#16161D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="24.4893" x="25" y="119.7935">par</text><text fill="#DCD7BA" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="193.4883" x="94.4893" y="118.937">[actions occur asynchronously]</text><polygon fill="#C6C6D6" points="368.4658,140.9922,378.4658,144.9922,368.4658,148.9922,372.4658,144.9922" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="63.1206" x2="374.4658" y1="144.9922" y2="144.9922"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="70.1206" y="139.9263">[01]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="104.0942" y="139.9263">Write</text><text fill="#727169" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="172.1865" x="143.1323" y="139.9263">sentinel-2 acquisition</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="319.4512" y="139.9263">Events</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="10" x2="1166.9443" y1="153.9922" y2="153.9922"/><ellipse cx="389.9658" cy="175.375" fill="#54546D" rx="4" ry="4" style="stroke:#C6C6D6;stroke-width:1.5;"/><polygon fill="#C6C6D6" points="406.9658,172.125,396.9658,176.125,406.9658,180.125,402.9658,176.125" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="400.9658" x2="486.4014" y1="176.125" y2="176.125"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="407.4658" y="171.0591">[02]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38.9619" x="441.4395" y="171.0591">Listen</text><polygon fill="#C6C6D6" points="927.9731,201.2578,937.9731,205.2578,927.9731,209.2578,931.9731,205.2578" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="497.4014" x2="933.9731" y1="205.2578" y2="205.2578"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="504.4014" y="200.1919">[03]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="538.375" y="200.1919">Write</text><text fill="#727169" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="297.4131" x="577.4131" y="200.1919">acme-sentinel2-stream-source-collected</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="878.9585" y="200.1919">Events</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="10" x2="1166.9443" y1="214.2578" y2="214.2578"/><ellipse cx="939.4731" cy="235.6406" fill="#54546D" rx="4" ry="4" style="stroke:#C6C6D6;stroke-width:1.5;"/><polygon fill="#C6C6D6" points="922.4731,232.3906,932.4731,236.3906,922.4731,240.3906,926.4731,236.3906" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="602.6924" x2="928.4731" y1="236.3906" y2="236.3906"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="609.6924" y="231.3247">[04]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81.396" x="643.666" y="231.3247">Read Events</text><polygon fill="#C6C6D6" points="1022.6899,261.5234,1032.6899,265.5234,1022.6899,269.5234,1026.6899,265.5234" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="602.6924" x2="1028.6899" y1="265.5234" y2="265.5234"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="609.6924" y="260.4575">[05]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46.7441" x="643.666" y="260.4575">Trigger</text><line style="stroke:#C6C6D6;stroke-width:1;" x1="1044.6899" x2="1086.6899" y1="294.6563" y2="294.6563"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="1086.6899" x2="1086.6899" y1="294.6563" y2="307.6563"/><line style="stroke:#C6C6D6;stroke-width:1;" x1="1045.6899" x2="1086.6899" y1="307.6563" y2="307.6563"/><polygon fill="#C6C6D6" points="1055.6899,303.6563,1045.6899,307.6563,1055.6899,311.6563,1051.6899,307.6563" style="stroke:#C6C6D6;stroke-width:1;"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="1051.6899" y="289.5903">[06]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59.2808" x="1085.6636" y="289.5903">Compute</text><path d="M353.2603,322.6563 L417.7031,322.6563 L417.7031,329.7891 L407.7031,339.7891 L353.2603,339.7891 L353.2603,322.6563 " fill="#90EE90" style="stroke:#957FB8;stroke-width:2;"/><rect fill="none" height="90.2031" style="stroke:#957FB8;stroke-width:1.5;" width="735.9824" x="353.2603" y="322.6563"/><text fill="#16161D" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="19.4429" x="368.2603" y="335.7231">alt</text><text fill="#DCD7BA" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="206.6958" x="432.7031" y="334.8667">[water bodies detection Success]</text><polygon fill="#C6C6D6" points="401.4658,356.9219,391.4658,360.9219,401.4658,364.9219,397.4658,360.9219" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="395.4658" x2="1033.6899" y1="360.9219" y2="360.9219"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="407.4658" y="355.856">[07]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="441.4395" y="355.856">Write</text><text fill="#727169" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="273.9331" x="480.4775" y="355.856">acme-water-bodies-detection-success</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="758.543" y="355.856">Events</text><line style="stroke:#957FB8;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="353.2603" x2="1089.2427" y1="369.9219" y2="369.9219"/><text fill="#DCD7BA" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="200.5405" x="358.2603" y="380.1323">[water bodies detection Failure]</text><polygon fill="#C6C6D6" points="401.4658,400.8594,391.4658,404.8594,401.4658,408.8594,397.4658,404.8594" style="stroke:#C6C6D6;stroke-width:1;"/><line style="stroke:#C6C6D6;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="395.4658" x2="1033.6899" y1="404.8594" y2="404.8594"/><text fill="#727169" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="29.9736" x="407.4658" y="399.7935">[08]</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34.9058" x="441.4395" y="399.7935">Write</text><text fill="#727169" font-family="monospace" font-size="13" lengthAdjust="spacing" textLength="273.9331" x="480.4775" y="399.7935">acme-water-bodies-detection-failure</text><text fill="#727169" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44.0146" x="758.543" y="399.7935">Events</text><line style="stroke:#A80036;stroke-width:2;" x1="1030.6899" x2="1048.6899" y1="419.8594" y2="437.8594"/><line style="stroke:#A80036;stroke-width:2;" x1="1030.6899" x2="1048.6899" y1="437.8594" y2="419.8594"/></g></svg></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg">License CC BY-SA 4.0</a>, by <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>
