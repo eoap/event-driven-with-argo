@@ -1,0 +1,38 @@
+# Architecture
+
+```puml
+@startuml
+
+frame "Producer Network" {
+  component "Collector" as publisher
+  database "Redis" as redis
+
+  publisher -r-> redis : Add new entries
+}
+
+frame "Platform Network" {
+  artifact "Sensor" as sensor
+  component "Sensor\nController" as sensorc
+  control "Sensor\nDeployment" as sensord
+  component "<$node>\nWorkflow" as container
+
+  sensorc -u-> sensor : Watch
+  sensorc -d-> sensord : Create
+  sensord -r-> container : Trigger
+
+  artifact "Event Source" as es
+  component "Event Source\nController" as esc
+  control "Event Source\nDeployment" as esd
+
+  esc -u-> es : Watch
+  esc -d-> esd : Create
+  esd -l-> redis : Listen
+
+  queue "Event Bus" as evbus
+
+  esd -d-> evbus : Write\nEvents
+  evbus -u-> sensord : Read\nEvents
+}
+
+@enduml
+```
