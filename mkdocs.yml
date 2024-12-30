@@ -59,6 +59,10 @@ extra_javascript:
 
 nav:
   - Introduction: 'index.md'
+  - Argo Workflows: 'argo-workflows.md'
+  - Argo Events: 'argo-events.md'
+  - Integration and Execution Flow: 'flow.md'
+  - Technical Insights and Learnings: 'insights.md'
   - Architecture:
     - Components: 'components.md'
     - Sequence Diagrams: 'sequence.md'
