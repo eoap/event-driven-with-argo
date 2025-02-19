@@ -20,9 +20,9 @@ By integrating Redis as an event broker, this implementation ensures low-latency
 For creating the environment and executing the Jupyter Notebook needed for this scenario, open a new terminal and execute the following commands:
 
 ```
-mamba env create -f environment.yml
-conda activate env_redis
+python -m venv env_redis
+source env_redis/bin/activate
+pip install -r requirements.txt
 python -m ipykernel install --user --name "env_redis"
 ```
-
 You might need to refresh your window, then open the [sub.ipynb](./sub.ipynb) Notebook and select the env_redis kernel on the top-right side of the window. Follow the [pub.ipynb](./pub.ipynb) notebooks to publish events. The reasons behind this ordering of execution are, the subscriber must be started first to ensure it is actively listening for events before the publisher begins sending data; otherwise, any messages sent beforehand will be lost, especially in Redis Pub/Sub, which does not store messages. Once the subscriber is running, it continuously reads messages from the Redis stream, allowing the publisher to then send events, which the subscriber will process and acknowledge upon receipt. Therefore please monitor both notebooks until all events are published.

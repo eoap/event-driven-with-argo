@@ -1,3 +1,4 @@
 .project
 no-commit/*
 *.TIF
+env*
