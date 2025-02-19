@@ -1,0 +1,12 @@
+name: env_redis
+channels:
+  - defualt
+  - conda-forge
+dependencies:
+  - ipykernel
+  - python=3.10
+  - pip
+  - pip:
+    - redis
+    - pystac_client
+    - loguru
