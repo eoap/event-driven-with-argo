@@ -36,7 +36,7 @@ To process general data preparation tasks or execute modular components of the d
 
 This template implements the core water bodies detection algorithm. 
 
-It processes geospatial data retrieved from the STAC endpoint and identifies water bodies using the defined logic.
+It processes geospatial data retrieved from the [STAC](https://stacspec.org/en) endpoint and identifies water bodies using the defined logic.
 
 **Purpose:**
 
