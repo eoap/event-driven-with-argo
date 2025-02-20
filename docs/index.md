@@ -26,7 +26,7 @@ This setup integrates the following technologies and concepts:
 ### Argo Events
 
 * Provides an event-driven architecture for triggering workflows.
-* Uses a Jetstream Event Bus to handle event communication.
+* Uses a [Jetstream](https://argoproj.github.io/argo-events/eventbus/jetstream/) Event Bus to handle event communication.
 * Includes:
   * Redis Event Source: Queries the STAC endpoint to generate simulated events.
   * Event Sensor: Listens for Redis events and triggers the water bodies detection workflow.
