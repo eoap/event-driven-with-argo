@@ -10,7 +10,7 @@ It also includes recommendations for future improvements and practical advice fo
 
 ### Event Source Configuration
 
-Challenge: Configuring Redis as a reliable event source for Argo Events.
+Challenge: Configuring [Redis](https://redis.io/docs/latest/develop/data-types/streams/) as a reliable event source for [Argo Events](https://argoproj.github.io/events/).
 
 Insight:
 * Redis' Pub/Sub feature proved effective but required careful setup to ensure scalability.
@@ -21,7 +21,7 @@ Insight:
 Challenge: Ensuring reliable and performant event routing.
 
 Insight:
-* Jetstream’s integration with Argo Events offers a robust event-driven architecture.
+* [Jetstream](https://argoproj.github.io/argo-events/eventbus/jetstream/)’s integration with Argo Events offers a robust event-driven architecture.
 * It is crucial to define clear message schemas for event payloads to maintain consistency.
 
 
@@ -30,7 +30,7 @@ Insight:
 Challenge: Managing workflows triggered by multiple simultaneous events.
 
 Insight:
-* Argo Workflows scales effectively but requires resource limits and quotas to prevent cluster overload.
+* [Argo Workflows](https://argoproj.github.io/workflows/) scales effectively but requires resource limits and quotas to prevent cluster overload.
 * Using parameterized templates enabled workflows to process diverse input data dynamically.
 
 ## Design Decisions
@@ -44,7 +44,7 @@ Outcome:
 
 ### Modular Workflow Templates
 
-Decision: Separate the CWL execution and water bodies detection into distinct workflow templates.
+Decision: Separate the [CWL](https://www.commonwl.org/user_guide/) execution and water bodies detection into distinct workflow templates.
 
 Outcome:
 * Enhanced reusability for other geospatial pipelines requiring similar preprocessing steps.
