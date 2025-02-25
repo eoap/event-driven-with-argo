@@ -18,3 +18,4 @@ By integrating Redis as an event broker, this implementation ensures low-latency
 ---
 ## Execution
 It is important to execute the [sub.ipynb](./sub.ipynb) Notebook first and then follow the [pub.ipynb](./pub.ipynb) notebooks to publish events. The reasons behind this ordering of execution are, the subscriber must be started first to ensure it is actively listening for events before the publisher begins sending data; otherwise, any messages sent beforehand will be lost, especially in Redis Pub/Sub, which does not store messages. Once the subscriber is running, it continuously reads messages from the Redis stream, allowing the publisher to then send events, which the subscriber will process and acknowledge upon receipt. Therefore please monitor both notebooks until all events are published.
+> Note: For both notebooks you must select the `.venv` kernel on the top-right side of the window. 
