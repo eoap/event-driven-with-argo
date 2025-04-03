@@ -3,10 +3,10 @@
 
 ## Introduction
 
-This learning resource demonstrates an event-driven system for detecting water bodies using cloud-native technologies. The system leverages Argo Events to handle and react to external event sources and Argo Workflows to execute data processing pipelines, including a water bodies detection algorithm encoded in the Common Workflow Language (CWL).
+This learning resource demonstrates an event-driven system for detecting [water bodies](https://github.com/eoap/mastering-app-package) using cloud-native technologies. The system leverages [Argo Events](https://argoproj.github.io/events/) to handle and react to external event sources and Argo Workflows to execute data processing pipelines, including a water bodies detection algorithm encoded in the Common Workflow Language ([CWL](https://www.commonwl.org/user_guide/)).
 
-The workflow is triggered by events simulated through Redis, an external event source, which queries a SpatioTemporal Asset Catalog (STAC) endpoint. The STAC endpoint provides geospatial data, which serves as the input for the detection algorithm. The automation is achieved using Kubernetes-native tools, making the setup scalable, modular, and suitable for Earth observation and geospatial applications.
-This project demonstrates an event-driven workflow for detecting water bodies in Sentinel-2 satellite imagery using Argo Events, Argo Workflows, and Calrissian. 
+The workflow is triggered by events simulated through [Redis](https://redis.io/docs/latest/develop/data-types/streams/), an external event source, which queries a SpatioTemporal Asset Catalog (STAC) endpoint. The STAC endpoint provides geospatial data, which serves as the input for the detection algorithm. The automation is achieved using Kubernetes-native tools, making the setup scalable, modular, and suitable for Earth observation and geospatial applications.
+This project demonstrates an event-driven workflow for detecting water bodies in Sentinel-2 satellite imagery using Argo Events, Argo Workflows, and [Calrissian](https://argoproj.github.io/workflows/). 
 
 It utilizes a Redis stream to trigger workflows that process Sentinel-2 imagery and generate outputs using CWL (Common Workflow Language).
 
@@ -26,7 +26,7 @@ This setup integrates the following technologies and concepts:
 ### Argo Events
 
 * Provides an event-driven architecture for triggering workflows.
-* Uses a Jetstream Event Bus to handle event communication.
+* Uses a [Jetstream](https://argoproj.github.io/argo-events/eventbus/jetstream/) Event Bus to handle event communication.
 * Includes:
   * Redis Event Source: Queries the STAC endpoint to generate simulated events.
   * Event Sensor: Listens for Redis events and triggers the water bodies detection workflow.

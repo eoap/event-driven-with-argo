@@ -2,23 +2,23 @@
 
 ## Introduction
 
-This page details the end-to-end integration and execution flow of the water bodies detection system. 
+This page details the end-to-end integration and execution flow of the [water bodies](https://github.com/eoap/mastering-app-package) detection system. 
 
-By combining Argo Workflows and Argo Events, the system achieves seamless automation triggered by geospatial data events.
+By combining [Argo Workflows](https://argoproj.github.io/workflows/)and [Argo Events](https://argoproj.github.io/events/), the system achieves seamless automation triggered by geospatial data events.
 
 ## Integration Architecture
 
 The integration involves three main layers:
 
-* Event Source Layer: Monitors Redis for events simulated by querying the STAC endpoint.
-* Event Routing Layer: The Jetstream event bus routes events from the Redis source to the sensor.
+* [Event Source](https://argoproj.github.io/argo-events/concepts/event_source/) Layer: Monitors Redis for events simulated by querying the [STAC](https://stacspec.org/en) endpoint.
+* Event Routing Layer: The [Jetstream](https://argoproj.github.io/argo-events/eventbus/jetstream/) event bus routes events from the Redis source to the sensor.
 * Workflow Execution Layer: Argo Workflows processes geospatial data and detects water bodies.
 
 ## End-to-End Execution Flow
 
 ### Step 1: Event Generation
 
-Description: Redis acts as an intermediary for event generation. Events are created by querying a STAC API endpoint for geospatial data.
+Description: [Redis](https://redis.io/docs/latest/develop/data-types/streams/) acts as an intermediary for event generation. Events are created by querying a STAC API endpoint for geospatial data.
 
 Details:
 * Queries can include filters such as specific time ranges or geographic areas.
@@ -55,7 +55,7 @@ Description: The Argo Workflow executes the pipeline to process geospatial data.
 Details:
 
 * The workflow includes two templates:
-* Calrissian Template: Runs a CWL pipeline to pre-process data.
+* [Calrissian](https://argoproj.github.io/workflows/) Template: Runs a [CWL](https://www.commonwl.org/user_guide/) pipeline to pre-process data.
 * Detection Template: Executes the water bodies detection algorithm.
 * Outputs include a GeoTiff file with detected water bodies described as a STAC Item, logs, and diagnostic data.
 
