@@ -1,0 +1,51 @@
+@startuml
+
+package "Collection" {
+  frame "stream-collector" {
+    component "stream-collector" as STREAM_COLLECTOR_ES
+    queue "stream-collector" as STREAM_COLLECTOR_T
+    STREAM_COLLECTOR_ES -r-> STREAM_COLLECTOR_T
+
+    control "stream-collector-sensor" as STREAM_COLLECTOR_S
+    STREAM_COLLECTOR_S -l-> STREAM_COLLECTOR_T
+
+    component "stream-collector-trigger" as STREAM_COLLECTOR_TR
+    STREAM_COLLECTOR_S -d-> STREAM_COLLECTOR_TR
+  }
+  queue "stream-collector.completed" as STREAM_COLLECTOR_COMPLETED {
+    json "CloudEvent" as STREAM_COLLECTOR_COMPLETED_PL {"specversion":"1.0","type":"string","source":"scan-calendar","subject":"usgs.scan-calendar.triggered","id":"74018372-9623-463e-ab4b-3fdd99467878","time":"2019-08-24T14:15:22Z","datacontenttype":"application/json","data":{"href":"https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson","producer":"USGS"}}
+  }
+
+  STREAM_COLLECTOR_TR -d-> STREAM_COLLECTOR_COMPLETED : [[/components/EDA/index.html#operation-send-SendStreamCollectorCompleted SendStreamCollectorCompleted]]
+  queue "stream-collector.failed" as STREAM_COLLECTOR_FAILED {
+    json "CloudEvent" as STREAM_COLLECTOR_FAILED_PL {"specversion":"1.0","type":"string","source":"scan-calendar","subject":"usgs.scan-calendar.triggered","id":"74018372-9623-463e-ab4b-3fdd99467878","time":"2019-08-24T14:15:22Z","datacontenttype":"application/json","data":{"href":"https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson","producer":"USGS"}}
+  }
+
+  STREAM_COLLECTOR_TR -d-> STREAM_COLLECTOR_FAILED : [[/components/EDA/index.html#operation-send-SendStreamCollectorFailed SendStreamCollectorFailed]]
+}
+
+package "Water Bodies Detection" {
+  frame "water-bodies-detector" {
+    component "water-bodies-detector" as WATER_BODIES_DETECTOR_ES
+    queue "water-bodies-detector" as WATER_BODIES_DETECTOR_T
+    WATER_BODIES_DETECTOR_ES -r-> WATER_BODIES_DETECTOR_T
+
+    control "water-bodies-detector-sensor" as WATER_BODIES_DETECTOR_S
+    WATER_BODIES_DETECTOR_S -l-> WATER_BODIES_DETECTOR_T
+
+    component "water-bodies-detector-trigger" as WATER_BODIES_DETECTOR_TR
+    WATER_BODIES_DETECTOR_S -d-> WATER_BODIES_DETECTOR_TR
+  }
+  queue "water-bodies-detector.completed" as WATER_BODIES_DETECTOR_COMPLETED {
+    json "CloudEvent" as WATER_BODIES_DETECTOR_COMPLETED_PL {"specversion":"1.0","type":"string","source":"scan-calendar","subject":"usgs.scan-calendar.triggered","id":"74018372-9623-463e-ab4b-3fdd99467878","time":"2019-08-24T14:15:22Z","datacontenttype":"application/json","data":{"href":"https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson","producer":"USGS","workflow_id":"String","workflow_name":"String","workflow_status":"String","stac_catalog":"URI"}}
+  }
+
+  WATER_BODIES_DETECTOR_TR -d-> WATER_BODIES_DETECTOR_COMPLETED : [[/components/EDA/index.html#operation-send-SendWaterBodiesDetectionCompleted SendWaterBodiesDetectionCompleted]]
+  queue "water-bodies-detector.failed" as WATER_BODIES_DETECTOR_FAILED {
+    json "CloudEvent" as WATER_BODIES_DETECTOR_FAILED_PL {"specversion":"1.0","type":"string","source":"scan-calendar","subject":"usgs.scan-calendar.triggered","id":"74018372-9623-463e-ab4b-3fdd99467878","time":"2019-08-24T14:15:22Z","datacontenttype":"application/json","data":{"href":"https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson","producer":"USGS"}}
+  }
+
+  WATER_BODIES_DETECTOR_TR -d-> WATER_BODIES_DETECTOR_FAILED : [[/components/EDA/index.html#operation-send-SendWaterBodiesDetectionFailed SendWaterBodiesDetectionFailed]]
+}
+
+WATER_BODIES_DETECTOR_ES -U-> STREAM_COLLECTOR_COMPLETED : [[/components/EDA/index.html#operation-receive-ReceiveStreamCollectorCompleted ReceiveStreamCollectorCompleted]]@enduml

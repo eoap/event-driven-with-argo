@@ -2,3 +2,5 @@
 no-commit/*
 *.TIF
 env*
+docs/diagrams/out
+site

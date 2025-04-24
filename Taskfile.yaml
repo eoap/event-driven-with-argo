@@ -1,0 +1,72 @@
+version: '3'
+
+tasks:
+
+  conditional_npm_install:
+    internal: true
+    status:
+    - npm list -g {{.PACKAGE}}
+    cmds:
+    - npm install -g {{.PACKAGE}}
+
+  install_asyncapi:
+    internal: true
+    cmds:
+    - task: conditional_npm_install
+      vars:
+        PACKAGE: '@asyncapi/cli'
+    - task: conditional_npm_install
+      vars:
+        PACKAGE: '@asyncapi/generator-react-sdk'
+
+  invoke_asyncapi:
+    internal: true
+    deps:
+    - task: install_asyncapi
+    cmds:
+    - asyncapi generate fromTemplate ./src/asyncapi.yaml {{.TEMPLATE}} -o {{.OUTPUT}} --use-new-generator --force-write
+
+  process_asyncapi:
+    desc: Generates the AsyncAPI documentation
+    cmds:
+    - task: invoke_asyncapi
+      vars:
+        TEMPLATE: '@asyncapi/html-template@3.0.0'
+        OUTPUT: './docs/components/EDA'
+    - task: invoke_asyncapi
+      vars:
+        TEMPLATE: 'git+ssh://git@git.terradue.com:8783/asyncapi/x-applications-plantuml-template.git'
+        OUTPUT: './docs/diagrams/src'
+
+  conditional_pip_install:
+    internal: true
+    status:
+    - pip list | grep {{.MODULE}}
+    cmds:
+    - pip install {{.MODULE}}
+
+  serve_docs:
+    deps:
+    - task: conditional_pip_install
+      vars:
+        MODULE: mkdocs-mermaid2-plugin
+    - task: conditional_pip_install
+      vars:
+        MODULE: mkdocs
+    - task: conditional_pip_install
+      vars:
+        MODULE: mkdocs-material
+    - task: conditional_pip_install
+      vars:
+        MODULE: mkdocs-build-plantuml-plugin
+    - task: conditional_pip_install
+      vars:
+        MODULE: pymdown-extensions
+    cmds:
+    - mkdocs build
+    - mkdocs serve
+
+  default:
+    cmds:
+    - task: process_asyncapi
+    - task: serve_docs
