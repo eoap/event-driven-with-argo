@@ -22,12 +22,12 @@ defaultContentType: application/json
 servers:
   production:
     host: kafka-cluster-kafka-bootstrap.events:9092
-    pathname: usgs-event-bus
+    pathname: acme-event-bus
     protocol: kafka
     protocolVersion: '1.0'
     description: Production Apache Kafka broker.
-    title: usgs-event-bus Server
-    summary: usgs-event-bus environment server
+    title: acme-event-bus Server
+    summary: acme-event-bus environment server
     externalDocs:
       description: Apache Kafka
       url: https://kafka.apache.org/
@@ -104,7 +104,7 @@ operations:
 
 channels:
   StreamCollectorCompleted:
-    address: stream-collector.completed
+    address: acme.stream-collector.completed
     messages:
       defaultMessage:
         $ref: '#/components/messages/StreamCollectorCompleted'
@@ -113,17 +113,17 @@ channels:
         payload:
           specversion: '1.0'
           type: string
-          source: scan-calendar
-          subject: usgs.scan-calendar.triggered
+          source: stream-collector
+          subject: acme.stream-collector.completed
           id: 74018372-9623-463e-ab4b-3fdd99467878
           time: '2019-08-24T14:15:22Z'
           datacontenttype: application/json
           data:
-            href: 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
-            producer: 'USGS'
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
 
   StreamCollectorFailed:
-    address: stream-collector.failed
+    address: acme.stream-collector.failed
     messages:
       defaultMessage:
         $ref: '#/components/messages/StreamCollectorFailed'
@@ -132,17 +132,17 @@ channels:
         payload:
           specversion: '1.0'
           type: string
-          source: scan-calendar
-          subject: usgs.scan-calendar.triggered
+          source: stream-collector
+          subject: acme.stream-collector.failed
           id: 74018372-9623-463e-ab4b-3fdd99467878
           time: '2019-08-24T14:15:22Z'
           datacontenttype: application/json
           data:
-            href: 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
-            producer: 'USGS'
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
 
   WaterBodiesDetectionCompleted:
-    address: water-bodies-detector.completed
+    address: acme.water-bodies-detector.completed
     messages:
       defaultMessage:
         $ref: '#/components/messages/WaterBodiesDetectionCompleted'
@@ -151,21 +151,21 @@ channels:
         payload:
           specversion: '1.0'
           type: string
-          source: scan-calendar
-          subject: usgs.scan-calendar.triggered
+          source: water-bodies-detector
+          subject: acme.water-bodies-detector.completed
           id: 74018372-9623-463e-ab4b-3fdd99467878
           time: '2019-08-24T14:15:22Z'
           datacontenttype: application/json
           data:
-            href: 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
-            producer: 'USGS'
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
             workflow_id: String
             workflow_name: String
             workflow_status: String
             stac_catalog: URI
 
   WaterBodiesDetectionFailed:
-    address: water-bodies-detector.failed
+    address: acme.water-bodies-detector.failed
     messages:
       defaultMessage:
         $ref: '#/components/messages/WaterBodiesDetectionFailed'
@@ -174,14 +174,14 @@ channels:
         payload:
           specversion: '1.0'
           type: string
-          source: scan-calendar
-          subject: usgs.scan-calendar.triggered
+          source: water-bodies-detector
+          subject: acme.water-bodies-detector.failed
           id: 74018372-9623-463e-ab4b-3fdd99467878
           time: '2019-08-24T14:15:22Z'
           datacontenttype: application/json
           data:
-            href: 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
-            producer: 'USGS'
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
 
 components:
   messages:
