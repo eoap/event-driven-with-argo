@@ -1,0 +1,33 @@
+@startuml
+
+autonumber "<b>[00]"
+
+participant "Event Source" as es
+participant "Event Source\nController" as esc
+control "Event Source\nDeployment" as esd
+
+participant "Sensor" as sensor
+participant "Sensor\nController" as sensorc
+control "Sensor\nDeployment" as sensord
+
+activate es
+activate esc
+activate sensor
+activate sensorc
+
+par actions occur asynchronously
+  esc -> es : Watch
+  esc -> esd ++ : Create
+else
+  sensorc -> sensor : Watch
+  sensorc -> sensord ++ : Create
+end
+
+deactivate es
+deactivate esc
+deactivate esd
+deactivate sensor
+deactivate sensorc
+deactivate sensord
+
+@enduml

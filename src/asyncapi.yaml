@@ -1,0 +1,291 @@
+asyncapi: 3.0.0
+
+info:
+  title: Water Bodies Detection
+  version: 1.0.0
+  description: This API provides real-time Water Bodies Detection events streaming capabilities.
+  contact:
+    name: Terradue
+    email: info@terradue.com
+  license:
+    name: Creative Commons Attribution-ShareAlike 4.0 International
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+  tags:
+  - name: Collection
+  - name: Water Bodies Detection
+  externalDocs:
+    description: Argo Events
+    url: https://argoproj.github.io/argo-events/
+
+defaultContentType: application/json
+
+servers:
+  production:
+    host: kafka-cluster-kafka-bootstrap.events:9092
+    pathname: acme-event-bus
+    protocol: kafka
+    protocolVersion: '1.0'
+    description: Production Apache Kafka broker.
+    title: acme-event-bus Server
+    summary: acme-event-bus environment server
+    externalDocs:
+      description: Apache Kafka
+      url: https://kafka.apache.org/
+    bindings:
+      kafka:
+        bindingVersion: 0.5.0
+
+x-applications:
+  stream-collector:
+    tags:
+    - name: Collection
+    operations:
+    - $ref: '#/operations/SendStreamCollectorCompleted'
+    - $ref: '#/operations/SendStreamCollectorFailed'
+
+  water-bodies-detector:
+    tags:
+    - name: Water Bodies Detection
+    operations:
+    - $ref: '#/operations/ReceiveStreamCollectorCompleted'
+    - $ref: '#/operations/SendWaterBodiesDetectionCompleted'
+    - $ref: '#/operations/SendWaterBodiesDetectionFailed'
+
+operations:
+  SendStreamCollectorCompleted:
+    action: send
+    title: stream-collector triggered
+    summary: stream-collector triggers the event.
+    description: stream-collector triggers the event.
+    channel:
+      $ref: '#/channels/StreamCollectorCompleted'
+    tags:
+    - name: collection
+
+  SendStreamCollectorFailed:
+    action: send
+    title: stream-collector triggered
+    summary: stream-collector triggers the event.
+    description: stream-collector triggers the event.
+    channel:
+      $ref: '#/channels/StreamCollectorFailed'
+    tags:
+    - name: collection
+
+  ReceiveStreamCollectorCompleted:
+    action: receive
+    title: stream-collector triggered
+    summary: stream-collector triggers the event.
+    description: stream-collector triggers the event.
+    channel:
+      $ref: '#/channels/StreamCollectorCompleted'
+    tags:
+    - name: collection
+
+  SendWaterBodiesDetectionCompleted:
+    action: send
+    title: stream-collector triggered
+    summary: stream-collector triggers the event.
+    description: stream-collector triggers the event.
+    channel:
+      $ref: '#/channels/WaterBodiesDetectionCompleted'
+    tags:
+    - name: Water Bodies Detection
+
+  SendWaterBodiesDetectionFailed:
+    action: send
+    title: stream-collector triggered
+    summary: stream-collector triggers the event.
+    description: stream-collector triggers the event.
+    channel:
+      $ref: '#/channels/WaterBodiesDetectionFailed'
+    tags:
+    - name: Water Bodies Detection
+
+channels:
+  StreamCollectorCompleted:
+    address: acme.stream-collector.completed
+    messages:
+      defaultMessage:
+        $ref: '#/components/messages/StreamCollectorCompleted'
+      examples:
+        name: CloudEvent
+        payload:
+          specversion: '1.0'
+          type: string
+          source: stream-collector
+          subject: acme.stream-collector.completed
+          id: 74018372-9623-463e-ab4b-3fdd99467878
+          time: '2019-08-24T14:15:22Z'
+          datacontenttype: application/json
+          data:
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
+
+  StreamCollectorFailed:
+    address: acme.stream-collector.failed
+    messages:
+      defaultMessage:
+        $ref: '#/components/messages/StreamCollectorFailed'
+      examples:
+        name: CloudEvent
+        payload:
+          specversion: '1.0'
+          type: string
+          source: stream-collector
+          subject: acme.stream-collector.failed
+          id: 74018372-9623-463e-ab4b-3fdd99467878
+          time: '2019-08-24T14:15:22Z'
+          datacontenttype: application/json
+          data:
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
+
+  WaterBodiesDetectionCompleted:
+    address: acme.water-bodies-detector.completed
+    messages:
+      defaultMessage:
+        $ref: '#/components/messages/WaterBodiesDetectionCompleted'
+      examples:
+        name: CloudEvent
+        payload:
+          specversion: '1.0'
+          type: string
+          source: water-bodies-detector
+          subject: acme.water-bodies-detector.completed
+          id: 74018372-9623-463e-ab4b-3fdd99467878
+          time: '2019-08-24T14:15:22Z'
+          datacontenttype: application/json
+          data:
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
+            workflow_id: String
+            workflow_name: String
+            workflow_status: String
+            stac_catalog: URI
+
+  WaterBodiesDetectionFailed:
+    address: acme.water-bodies-detector.failed
+    messages:
+      defaultMessage:
+        $ref: '#/components/messages/WaterBodiesDetectionFailed'
+      examples:
+        name: CloudEvent
+        payload:
+          specversion: '1.0'
+          type: string
+          source: water-bodies-detector
+          subject: acme.water-bodies-detector.failed
+          id: 74018372-9623-463e-ab4b-3fdd99467878
+          time: '2019-08-24T14:15:22Z'
+          datacontenttype: application/json
+          data:
+            href: 'https://acme.gov/fdsnws/event/1/query?eventid=us7000pn9z&format=geojson'
+            producer: 'acme'
+
+components:
+  messages:
+    StreamCollectorCompleted:
+      name: streamCollectorCompleted
+      title: 'Message: stream-collector.completed'
+      summary: Message definition for stream-collector.completed
+      payload:
+        $ref: '#/components/schemas/StreamCollectorCompleted'
+
+    StreamCollectorFailed:
+      name: streamCollectorFailed
+      title: 'Message: stream-collector.failed'
+      summary: Message definition for stream-collector.failed
+      payload:
+        $ref: '#/components/schemas/StreamCollectorCompleted'
+
+    WaterBodiesDetectionCompleted:
+      name: waterBodiesDetectionCompleted
+      title: 'Message: water-bodies-detector.completed'
+      summary: Message definition for stream-collector.completed
+      payload:
+        $ref: '#/components/schemas/WaterBodiesDetectionCompleted'
+
+    WaterBodiesDetectionFailed:
+      name: waterBodiesDetectionFailed
+      title: 'Message: water-bodies-detector.failed'
+      summary: Message definition for water-bodies-detector.failed
+      payload:
+        $ref: '#/components/schemas/StreamCollectorCompleted'
+
+  schemas:
+    BaseCloudEvent:
+      type: object
+      required:
+      - specversion
+      - type
+      - source
+      - subject
+      - id
+      - time
+      - datacontenttype
+      properties:
+        specversion:
+          type: string
+          enum:
+          - '1.0'
+        type:
+          type: string
+        source:
+          type: string
+        subject:
+          type: string
+        id:
+          type: string
+        time:
+          type: string
+          format: date-time
+        datacontenttype:
+          type: string
+          enum:
+          - application/json
+      additionalProperties: false
+
+    StreamCollectorCompleted:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BaseCloudEvent'
+      properties:
+        data:
+          type: object
+          required:
+          - href
+          - producer
+          properties:
+            href:
+              type: string
+              format: uri
+            producer:
+              type: string
+          additionalProperties: false
+      additionalProperties: false
+
+    WaterBodiesDetectionCompleted:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/StreamCollectorCompleted'
+      properties:
+        data:
+          type: object
+          required:
+          - workflow_id
+          - workflow_name
+          - workflow_status
+          - stac_catalog
+          properties:
+            workflow_id:
+              type: string
+            workflow_name:
+              type: string
+            workflow_status:
+              type: string
+            stac_catalog:
+              type: string
+              format: uri
+          additionalProperties: false
+      additionalProperties: false
